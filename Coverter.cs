@@ -6,7 +6,10 @@
         {
             string[] validInputs = { "1", "2", "3", "4", "5", "6" };
             string[] currencyLabels = { "USD", "NOK", "EUR", "CAD", "JPY", "SEK" };
-            string currencies = "1. USD       4. CAD\r\n2. NOK       5. JPY\r\n3. EUR       6. SEK";
+            string currencies = @"
+1. USD       4. CAD
+2. NOK       5. JPY
+3. EUR       6. SEK";
             Console.WriteLine("Dette er en valuta konverteringsprogram!");
             Console.WriteLine("Velg hvilken valuta du vil konvertere fra: ");
             Console.WriteLine(currencies);
@@ -71,7 +74,7 @@
                         convertedCurrency = fromValueNumber * NOKtoOthers.SEK;
                         break;
                     default:
-                        Console.WriteLine("Invalid input!");
+                        Console.WriteLine("Ugyldig input!");
                         break;
                 }
             }
