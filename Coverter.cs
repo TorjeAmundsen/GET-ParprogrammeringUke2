@@ -5,6 +5,7 @@
         public static void Run()
         {
             string[] validInputs = { "1", "2", "3", "4", "5", "6" };
+            string[] currencyLabels = { "USD", "NOK", "EUR", "CAD", "JPY", "SEK" };
             string currencies = "1. USD       4. CAD\r\n2. NOK       5. JPY\r\n3. EUR       6. SEK";
             Console.WriteLine("Dette er en valuta konverteringsprogram!");
             Console.WriteLine("Velg hvilken valuta du vil konvertere fra: ");
@@ -12,7 +13,6 @@
 
             string currencyFrom = "";
 
-            // currencyFrom != "1" && currencyFrom != "2" && currencyFrom != "3" && currencyFrom != "4" && currencyFrom !="5" && currencyFrom !="6"
             while (!validInputs.Contains(currencyFrom))
             {
                 currencyFrom = Console.ReadLine();
@@ -75,7 +75,8 @@
                         break;
                 }
             }
-            Console.WriteLine($"Konvertert valutaverdi: {convertedCurrency}");
+            string roundedCurrency = convertedCurrency.ToString("N2");
+            Console.WriteLine($"{fromValueString} {currencyLabels[int.Parse(currencyFrom)-1]} = {roundedCurrency} {currencyLabels[int.Parse(currencyTo) - 1]}");
         }
     }
     static class NOKtoOthers
